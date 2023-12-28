@@ -4,16 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    
     <title>Document</title>
 </head>
 <body>
+    <button class="generate"> Generate New Grid </button>
     <div id="grid-container"></div>
     <script>
-        const length = 24;
-        const size = String(600 / length);
-        console.log(size);
-        const realSize = `${size}px`;
         const gridContainer = document.querySelector("#grid-container");
+        const generator = document.querySelector(".generate");
+        generator.addEventListener("click", (event) =>
+        {
+            check = true;
+            while(check){
+                let length = prompt("What is the size of the new grid? ")
+                if (length > 100){
+                    alert("Please enter a number equal to or below 100")
+                }
+                else{
+                    check = false;
+                    gridContainer.replaceChildren()
+                    generateGrid(length)
+                }
+            }
+            
+        })
+    function generateGrid(userSize){
+
+    
+        const length = userSize;
+        const size = String((600 / length) - 2);
+        const realSize = `${size}px`;
         for (let i = 0; i < length; i++){
             rowContainer = document.createElement("div");
             rowContainer.classList.add("row-container");
@@ -22,10 +43,21 @@
                 box = document.createElement("div");
                 box.classList.add("grid");
                 box.style.width = realSize;
-                box.textContent = j;
+                box.style.height =realSize;
                 rowContainer.appendChild(box);
             }
         }
+        boxes = document.querySelectorAll(".grid");
+        for (let i = 0; i < boxes.length; i++){
+            boxes[i].addEventListener("mouseenter", (event) => {
+            boxes[i].style.backgroundColor = "black";
+        }
+        )
+        }
+        
+    }
+    
+    generateGrid(24)
     </script>
 </body>
 </html>

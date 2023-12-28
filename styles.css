@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 600px;
-    padding: 5px;
+    padding: 0;
     justify-content: center;
     align-items: center;
     border: 2px solid teal;
@@ -10,6 +10,7 @@
 .grid{
     height: 15px;
     padding: 0;
+    border: 1px solid orange;
 }
 .row-container{
     display: flex;
@@ -21,4 +22,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 80vh;
+}
+.generate{
+    margin-right: 100px;
 }
