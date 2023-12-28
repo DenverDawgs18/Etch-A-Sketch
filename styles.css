@@ -1,0 +1,24 @@
+#grid-container{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid teal;
+}
+.grid{
+    height: 15px;
+    padding: 0;
+}
+.row-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}

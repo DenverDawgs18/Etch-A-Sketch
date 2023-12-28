@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="grid-container"></div>
+    <script>
+        const length = 24;
+        const size = String(600 / length);
+        console.log(size);
+        const realSize = `${size}px`;
+        const gridContainer = document.querySelector("#grid-container");
+        for (let i = 0; i < length; i++){
+            rowContainer = document.createElement("div");
+            rowContainer.classList.add("row-container");
+            gridContainer.appendChild(rowContainer)
+            for (let j = 0; j < length; j++){
+                box = document.createElement("div");
+                box.classList.add("grid");
+                box.style.width = realSize;
+                box.textContent = j;
+                rowContainer.appendChild(box);
+            }
+        }
+    </script>
+</body>
+</html>
